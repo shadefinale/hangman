@@ -1,11 +1,14 @@
 <h1> Hangman </h1>
 
+<link rel="stylesheet" href="/css/base.css">
+
+
 <div id="display"><%= display %></div>
 <div id="guesses">Remaning Guesses:<%= guesses %></div>
 <div id="letters">Wrong Letters: <%= letters %></div>
 
 <form action='/game/<%= id%>' method="POST">
-  Guess a letter!
-  <input type="text" name="guess" pattern="[A-Za-z]{1}">
-  <input type="submit">
+  <div>Guess a letter!</div>
+  <div><input type="text" name="guess" pattern="[A-Za-z]{1}"></div>
+  <div><input type="submit"></div>
 </form>

@@ -100,7 +100,6 @@ end
 # Takes the words and letters, and fills in any blanks where the player has guessed the
 # corresponding letter.
 def create_display(word, letters)
-  print word.upcase.split("")
   word.upcase.split("").map{|letter| letters.include?(letter) ? letter : "_"}.join(" ")
 end
 

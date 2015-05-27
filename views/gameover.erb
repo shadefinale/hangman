@@ -1,6 +1,8 @@
 <h1> Game over </h1>
 
-<p> Sorry! You've run out of guesses! The word was <%= word %> </p>
+<link rel="stylesheet" href="/css/base.css">
+
+<div> Sorry! You've run out of guesses! The word was <%= word %> </div>
 
 <form action='/game/new' method="GET">
   <input type="submit" value="Click here to play a new game!">
