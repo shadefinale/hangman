@@ -1,0 +1,8 @@
+<h1> Play Hangman! <h1>
+
+<form action='/game/new' method="POST">
+  Select a difficulty and let's begin!
+  <!-- Technically there's words with more than 30 chars in enable.txt but I feel 30 is plenty. -->
+  Easy <input type="number" name="difficulty" min="2" max="30"> Hard
+  <input type="submit">
+</form>
