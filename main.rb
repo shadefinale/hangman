@@ -3,6 +3,11 @@ require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 
+# We'll redefine the database to be a test database if we're running the tests.
+configure :test do
+  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/test.db")
+end
+
 # Our class that will be used by the ORM to keep track of different play sessions.
 class Game
   include DataMapper::Resource
@@ -12,7 +17,7 @@ class Game
   property :letters, String, :default => ""
 end
 
-DataMapper.finalize
+DataMapper.finalize.auto_upgrade!
 
 # Takes the large amount of words from enable.txt and puts them into an array.
 def generate_words
